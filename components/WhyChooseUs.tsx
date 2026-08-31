@@ -1,252 +1,85 @@
-// // "use client";
-
-// // import Image from "next/image";
-// // import { CheckCircle } from "lucide-react";
-// // import Link from "next/link";
-
-// // export default function WhyChooseUs() {
-// //   return (
-// //     <section
-// //       className="relative py-20 px-6 md:px-16 text-black"
-// //       style={{
-// //         backgroundImage: "url('/why-bg.jpg')", // 👈 background image
-// //         backgroundSize: "cover",
-// //         backgroundPosition: "center",
-// //       }}
-// //     >
-// //       {/* Dark overlay */}
-// //       {/* <div className="absolute inset-0 bg-black/80"></div> */}
-
-// //       <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-
-// //         {/* LEFT TEXT */}
-// //         <div>
-// //           <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-// //             Why Choose Us <br /> As Your <br /> Construction <br /> Partner?
-// //           </h2>
-// //         </div>
-
-// //         {/* RIGHT CARD */}
-// //         <div className="bg-[#0c1633] rounded-b-[150px]   rounded-t-[10px]  overflow-hidden shadow-2xl">
-
-// //   {/* Image */}
-// //   <div className="relative w-full h-94">
-// //     <Image
-// //       src="/pexels-burst-544966.jpg"
-// //       alt="Construction Worker"
-// //       fill
-// //       className="object-cover"
-// //     />
-// //   </div>
-
-// //   {/* Content */}
-// //   <div className="p-8 space-y-5 flex flex-col items-center text-center">
-
-// //     <div className="flex items-center gap-3 justify-center text-white">
-// //       <CheckCircle className="text-orange-500" />
-// //       <span>12+ Years of Experience</span>
-// //     </div>
-
-// //     <div className="flex items-center gap-3 justify-center text-white">
-// //       <CheckCircle className="text-orange-500" />
-// //       <span>Timely Project Delivery</span>
-// //     </div>
-
-// //     <div className="flex items-center gap-3 justify-center text-white">
-// //       <CheckCircle className="text-orange-500" />
-// //       <span>Customer-Centric Service</span>
-// //     </div>
-
-// //     <Link
-// //       href="/contact"
-// //       className="inline-block mt-4 bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-full font-semibold transition"
-// //     >
-// //       Let’s Build Together
-// //     </Link>
-
-// //   </div>
-// // </div>
-       
-
-// //       </div>
-// //     </section>
-// //   );
-// // }
-
-
-// "use client";
-
-// import Image from "next/image";
-// import { CheckCircle } from "lucide-react";
-// import Link from "next/link";
-
-// export default function WhyChooseUs() {
-//   return (
-//     <section className="relative py-20 px-6 md:px-16 text-black overflow-hidden">
-//       {/* Parallax background layer */}
-//       <div
-//         className="absolute inset-0 z-0"
-//         style={{
-//           backgroundImage: "url('/pexels-lucaspezeta-2333694.jpg')",
-//           backgroundSize: "cover",
-//           backgroundPosition: "center",
-//           backgroundAttachment: "fixed", // 👈 creates parallax effect
-//           transform: "translateZ(0)", // performance hint
-//         }}
-//       />
-
-//       {/* Optional dark overlay (uncomment if needed) */}
-//       {/* <div className="absolute inset-0 bg-black/60 z-0"></div> */}
-
-//       <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-//         {/* LEFT TEXT */}
-//         <div>
-//           <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-//             Why Choose Us <br /> As Your <br /> Construction <br /> Partner?
-//           </h2>
-//         </div>
-
-//         {/* RIGHT CARD */}
-//         <div className="bg-[#0c1633] rounded-b-[150px] rounded-t-[10px] overflow-hidden shadow-2xl">
-//           {/* Image */}
-//           <div className="relative w-full h-94">
-//             <Image
-//               src="/pexels-burst-544966.jpg"
-//               alt="Construction Worker"
-//               fill
-//               className="object-cover"
-//             />
-//           </div>
-
-//           {/* Content */}
-//           <div className="p-8 space-y-5 flex flex-col items-center text-center">
-//             <div className="flex items-center gap-3 justify-center text-white">
-//               <CheckCircle className="text-orange-500" />
-//               <span>12+ Years of Experience</span>
-//             </div>
-//             <div className="flex items-center gap-3 justify-center text-white">
-//               <CheckCircle className="text-orange-500" />
-//               <span>Timely Project Delivery</span>
-//             </div>
-//             <div className="flex items-center gap-3 justify-center text-white">
-//               <CheckCircle className="text-orange-500" />
-//               <span>Customer-Centric Service</span>
-//             </div>
-//             <Link
-//               href="/contact"
-//               className="inline-block mt-4 bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-full font-semibold transition"
-//             >
-//               Let’s Build Together
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function WhyChooseUs() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [bgPositionY, setBgPositionY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-
-      const rect = sectionRef.current.getBoundingClientRect();
-      const scrollY = window.scrollY;
-      const sectionTop = rect.top + scrollY;
-      const sectionHeight = rect.height;
-      const viewportHeight = window.innerHeight;
-
-      // Calculate how far the user has scrolled past the top of the section (clamped 0..1)
-      let progress = (scrollY - sectionTop + viewportHeight) / (sectionHeight + viewportHeight);
-      progress = Math.min(Math.max(progress, 0), 1);
-
-      // Map progress to background position Y: 0% at start, 100% at end
-      // The image will appear to move upward as we scroll down
-      const newPos = progress * 100;
-      setBgPositionY(newPos);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
-    handleScroll(); // initial call
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative py-20 px-6 md:px-16 text-black overflow-hidden"
-    >
-      {/* Parallax background layer – moves up on scroll */}
+    <section className="relative py-24 px-6 md:px-16 text-white overflow-hidden">
+      {/* Fixed Background Image */}
       <div
-        className="absolute inset-0 z-0 transition-transform duration-100 ease-out"
+        className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/sketch_orange_lines.png')",
+          backgroundImage: "url('/Subpages.png')",
           backgroundSize: "cover",
-          backgroundPosition: `center ${bgPositionY}%`,
+          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
         }}
       />
-      <div className="absolute inset-0 bg-black/20"></div>
 
-      {/* Optional dark overlay (uncomment if needed) */}
-      {/* <div className="absolute inset-0 bg-black/60 z-0"></div> */}
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-zinc-950/85 z-0"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.3fr_0.9fr] gap-14 items-center">
         {/* LEFT TEXT */}
         <div>
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-            Why Choose Us <br /> As Your <br /> Construction <br /> Partner?
+          <p className="text-orange-500 font-semibold tracking-wide uppercase text-sm mb-4">
+            Why Aqua Engineering
+          </p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            Why Choose Us As Your Trusted Construction Partner
           </h2>
+
+          <p className="text-zinc-300 mt-6 max-w-xl leading-relaxed">
+            We combine careful planning, transparent estimating, and hands-on
+            project management to deliver builds that meet your budget,
+            timeline, and standards.
+          </p>
+
+          <Link
+            href="/contact"
+            className="inline-block mt-8 bg-orange-600 hover:bg-orange-700 px-8 py-3.5 rounded-md font-semibold transition-colors shadow-sm"
+          >
+            Let&apos;s Build Together
+          </Link>
         </div>
 
         {/* RIGHT CARD */}
-        <div className="bg-[#0c1633] rounded-b-[150px] rounded-t-[10px] overflow-hidden shadow-2xl">
-          {/* Image */}
-          <div className="relative w-full h-94">
+        <div className="bg-zinc-900/90 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+          <div className="relative w-full h-[220px] md:h-[280px]">
             <Image
               src="/pexels-burst-544966.jpg"
-              alt="Construction Worker"
+              alt="Construction worker on site for Aqua Engineering Construction"
               fill
               className="object-cover"
             />
+            <div className="absolute inset-0 bg-zinc-950/20" />
           </div>
 
-          {/* Content */}
-          <div className="p-8 space-y-5 flex flex-col items-center text-center">
-            <div className="flex items-center gap-3 justify-center text-white">
-              <CheckCircle className="text-orange-500" />
-              <span>12+ Years of Experience</span>
+          <div className="p-8">
+            <div className="space-y-5">
+              <div className="flex items-center gap-4">
+                <CheckCircle className="text-orange-500 shrink-0" size={22} />
+                <span className="text-sm text-zinc-200">
+                  12+ Years of Industry Experience
+                </span>
+              </div>
+              <div className="flex items-center gap-4">
+                <CheckCircle className="text-orange-500 shrink-0" size={22} />
+                <span className="text-sm text-zinc-200">
+                  Timely &amp; Professional Project Delivery
+                </span>
+              </div>
+              <div className="flex items-center gap-4">
+                <CheckCircle className="text-orange-500 shrink-0" size={22} />
+                <span className="text-sm text-zinc-200">
+                  Customer-Centric Construction Solutions
+                </span>
+              </div>
             </div>
-            <div className="flex items-center gap-3 justify-center text-white">
-              <CheckCircle className="text-orange-500" />
-              <span>Timely Project Delivery</span>
-            </div>
-            <div className="flex items-center gap-3 justify-center text-white">
-              <CheckCircle className="text-orange-500" />
-              <span>Customer-Centric Service</span>
-            </div>
-            <Link
-              href="/contact"
-              className="inline-block mt-4 bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-full font-semibold transition"
-            >
-              Let’s Build Together
-            </Link>
           </div>
         </div>
       </div>

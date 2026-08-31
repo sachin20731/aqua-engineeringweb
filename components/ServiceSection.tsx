@@ -145,20 +145,20 @@ const services = [
     title: "Project Management",
     description:
       "We manage projects from start to finish with proper planning and supervision.",
-    image: "/Servicess/ProjectManagement.jpg",
+    image: "/Servicess/Project Managment.jpg",
   },
 ];
 
 export default function ServiceSection() {
   return (
-    <section className="py-16 bg-gray-50 px-6 md:px-16">
+    <section className="py-16 bg-zinc-50 px-6 md:px-16">
       
       {/* Title */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-bold text-zinc-800">
           Our Services
         </h2>
-        <p className="text-gray-500 mt-2">
+        <p className="text-zinc-500 mt-2">
           Delivering quality construction solutions
         </p>
       </div>
@@ -182,10 +182,10 @@ export default function ServiceSection() {
 
             {/* Content */}
             <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-zinc-800 mb-2">
                 {service.title}
               </h3>
-              <p className="text-gray-500 text-sm mb-4">
+              <p className="text-zinc-500 text-sm mb-4">
                 {service.description}
               </p>
 

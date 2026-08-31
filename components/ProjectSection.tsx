@@ -203,7 +203,7 @@ const projects = [
   {
     title: "Commercial Complex",
     location: "Colombo",
-    image: "/projects/project3.jpg",
+    image: "/work.jpg",
     year: "2024",
     category: "Commercial",
     dark: false,
@@ -247,11 +247,11 @@ export default function ProjectSection() {
         <span className="text-orange-500 font-semibold tracking-wider text-sm uppercase mb-2 block">
           Our Portfolio
         </span>
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
+        <h2 className="text-3xl md:text-5xl font-bold text-zinc-900">
           Featured Projects
         </h2>
         <div className="w-20 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-gray-600 max-w-2xl mx-auto mt-4">
+        <p className="text-zinc-600 max-w-2xl mx-auto mt-4">
           Discover our latest constructions – built with precision, passion, and quality.
         </p>
       </div>
@@ -292,8 +292,8 @@ export default function ProjectSection() {
               className={`
                 w-full md:w-1/2 flex flex-col justify-center px-8 md:px-12 lg:px-16 py-12
                 ${project.dark
-                  ? "bg-gradient-to-br from-[#0c1633] to-[#0a0f2a] text-white"
-                  : "bg-white text-gray-800 border border-gray-100 shadow-xl"
+                  ? "bg-gradient-to-br from-zinc-900 to-zinc-950 text-white"
+                  : "bg-white text-zinc-800 border border-zinc-100 shadow-xl"
                 }
                 rounded-2xl md:rounded-none md:rounded-r-2xl
                 ${index % 2 === 1 ? "md:rounded-l-2xl md:rounded-r-none" : "md:rounded-r-2xl"}
@@ -305,7 +305,7 @@ export default function ProjectSection() {
                   <Calendar size={14} />
                   <span>{project.year}</span>
                 </div>
-                <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                <div className="w-1 h-1 bg-zinc-400 rounded-full"></div>
                 <div className="flex items-center gap-1">
                   <MapPin size={14} className="text-orange-500" />
                   <span className="opacity-80">{project.location}</span>
@@ -329,8 +329,8 @@ export default function ProjectSection() {
               </p>
 
               <Link
-                href={`/projects/${index + 1}`}
-                className="group w-fit flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-7 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-xl"
+                href="/partners"
+                className="group w-fit flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-7 py-3.5 rounded-md font-semibold transition-all duration-300 shadow-sm"
               >
                 View Project
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
@@ -341,9 +341,9 @@ export default function ProjectSection() {
       </div>
 
       {/* CTA to All Projects */}
-      <div className="text-center py-16 border-t border-gray-200">
+      <div className="text-center py-16 border-t border-zinc-200">
         <Link
-          href="/projects"
+          href="/partners"
           className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all duration-300"
         >
           Browse All Projects

@@ -138,7 +138,7 @@
 //         />
 
 //         {/* Orange Overlay */}
-//         <div className="absolute inset-0 bg-orange-500/90"></div>
+//         <div className="absolute inset-0 bg-orange-600/92"></div>
 
 //         {/* Content */}
 //         <div className="relative z-10 text-white px-6">
@@ -158,6 +158,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { CheckCircle2 } from "lucide-react";
 
 export function Aboutus() {
   return (
@@ -178,12 +180,12 @@ export function Aboutus() {
 
           {/* RIGHT SIDE - CONTENT */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">
               About <span className="text-orange-600">Aqua Engineering</span>
             </h2>
 
             {/* NEW PROFESSIONAL DESCRIPTION */}
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-zinc-600 mb-4 leading-relaxed">
               Aqua Engineering & Construction was founded in the Kegalle area
               with a vision to deliver reliable and high-quality engineering
               solutions to local communities. What began as a small-scale
@@ -191,7 +193,7 @@ export function Aboutus() {
               commitment to excellence.
             </p>
 
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-zinc-600 mb-4 leading-relaxed">
               Over the years, the company expanded its services beyond Kegalle,
               successfully completing numerous residential, commercial, and
               industrial projects. With increasing demand and a strong
@@ -199,7 +201,7 @@ export function Aboutus() {
               its presence in Colombo, the commercial capital of Sri Lanka.
             </p>
 
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-zinc-600 mb-6 leading-relaxed">
               Today, Aqua Engineering & Construction operates across Sri Lanka,
               delivering innovative and sustainable construction solutions. Our
               success is driven by a skilled team, modern technology, and a
@@ -212,24 +214,31 @@ export function Aboutus() {
 
             {/* FEATURES */}
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="bg-gray-100 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-800">✔ Quality Work</h4>
+              <div className="bg-zinc-100 p-4 rounded-lg flex items-center gap-2">
+                <CheckCircle2 size={18} className="text-orange-600 shrink-0" />
+                <h4 className="font-semibold text-zinc-800 text-sm">Quality Work</h4>
               </div>
-              <div className="bg-gray-100 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-800">✔ Expert Team</h4>
+              <div className="bg-zinc-100 p-4 rounded-lg flex items-center gap-2">
+                <CheckCircle2 size={18} className="text-orange-600 shrink-0" />
+                <h4 className="font-semibold text-zinc-800 text-sm">Expert Team</h4>
               </div>
-              <div className="bg-gray-100 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-800">✔ Modern Design</h4>
+              <div className="bg-zinc-100 p-4 rounded-lg flex items-center gap-2">
+                <CheckCircle2 size={18} className="text-orange-600 shrink-0" />
+                <h4 className="font-semibold text-zinc-800 text-sm">Modern Design</h4>
               </div>
-              <div className="bg-gray-100 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-800">✔ On-Time Delivery</h4>
+              <div className="bg-zinc-100 p-4 rounded-lg flex items-center gap-2">
+                <CheckCircle2 size={18} className="text-orange-600 shrink-0" />
+                <h4 className="font-semibold text-zinc-800 text-sm">On-Time Delivery</h4>
               </div>
             </div>
 
             {/* BUTTON */}
-            <button className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition">
-              Learn More
-            </button>
+            <Link
+              href="/about"
+              className="inline-block bg-orange-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-700 transition-colors"
+            >
+              Our Story
+            </Link>
           </div>
         </div>
       </section>
@@ -247,7 +256,7 @@ export function Aboutus() {
         />
 
         {/* Orange Overlay */}
-        <div className="absolute inset-0 bg-orange-500/90"></div>
+        <div className="absolute inset-0 bg-orange-600/92"></div>
 
         {/* Content */}
         <div className="relative z-10 text-white px-6">
